@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ADMIN</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <div class="signin">
+      <div class="content">
+        <h2>ADMIN LOGIN 👑</h2>
+        <div class="form">
+          <div class="inputBox">
+            <input type="text" id="adminID" required> <i>Admin ID 👽</i>
+          </div>
+          <div class="inputBox">
+            <input type="password" id="password" required> <i>Password 🙈</i>
+          </div>
+          <div class="links"> <a href="#">Forgot Password ?🤣 </a> <a href="#"></a>
+          </div>
+          <div class="inputBox">
+            <input type="submit" id="loginButton" value="Login">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    const loginButton = document.getElementById('loginButton');
+    const adminIDInput = document.getElementById('adminID');
+    const passwordInput = document.getElementById('password');
+
+    // Focus on the password input when Enter is pressed after Admin ID
+    adminIDInput.addEventListener('keyup', function(event) {
+      if (event.keyCode === 13) {
+        passwordInput.focus();
+      }
+    });
+
+    // Perform login when Enter is pressed after entering the password
+    passwordInput.addEventListener('keyup', function(event) {
+      if (event.keyCode === 13) {
+        performLogin();
+      }
+    });
+
+    // Function to handle login
+    function performLogin() {
+      const adminID = adminIDInput.value;
+      const password = passwordInput.value;
+
+      if (adminID === 'sid' && password === 'sid') {
+        window.location.href = 'welcome.html'; // Redirect to the welcome page
+      } else {
+        alert('You are not SID 🥱');
+      }
+    }
+
+    // Login button click event
+    loginButton.addEventListener('click', performLogin);
+  </script>
+</body>
+</html>

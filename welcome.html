@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome </title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+     body 
+     {
+      background-image: url("/images/abg3.jpeg");
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+#updateMembersContainer {
+  font-size: 12px; 
+  position: absolute;
+    top: 20px; 
+    left: 20px; 
+    color: rgb(248, 244, 244);
+    margin-top: 120px;
+}
+#updateEvents{
+  font-size: 12px; 
+  position: absolute;
+    top: 20px; 
+    left: 20px; 
+    color: rgb(248, 244, 244);
+      margin-top: 340px;
+}
+#updateAbout{
+  font-size: 12px; 
+  position: absolute;
+    top: 20px; 
+    left: 20px; 
+    color: rgb(248, 244, 244);
+      margin-top: 220px;
+}
+.updateButton {
+      font-size: 16px;
+      padding: 6px 18px;
+      background-color: #00d9ff;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 10px; /* Adjust as needed */
+    }
+#excelButton {
+    font-size: 16px;
+    padding: 6px 18px;
+    background-color: #00d9ff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+   
+}  
+
+         
+  </style>
+</head>
+<body>
+  <div class="welcome" style="text-align: center; font-size: 14px; margin-top: -550px;">
+    <h1 style="color: #ffffff; font-weight: bold;">WELCOME CHIEF <img src="/images/cat1.png" width="36" height="36">  </h1>
+    
+  </div>
+  
+  <div id="updateMembersContainer">
+    <h1><strong>Update Team Members :</strong> <button id="excelButton" style="font-weight: bold;"> Update Members </button></h1>
+  </div>
+  <div id="updateAbout">
+    <h1><strong>Update About:</strong> <button class="updateButton" id="updateAboutButton" style="font-weight: bold;"> Update </button></h1>
+  </div>
+  
+  <div id="updateEvents">
+    <h1><strong>Update Events:</strong>
+      <label for="eventPhotosInput"Upload Photos class="updateButton" id="Button" style="font-weight: bold;"> Upload photos </button></h1></label>
+      <input type="file" id="eventPhotosInput" accept="image/*" style="display: none;">
+    </h1>
+    <div id="uploadedPhotosContainer"></div>
+  </div>
+  
+  
+
+  <script>
+     document.getElementById("excelButton").addEventListener("click", function() {
+        var excelFileURL = "https://docs.google.com/spreadsheets/d/1jt34YIpN9AkoOJvQg6eCeEGMMouXBbi0/edit#gid=1281985862";
+        window.open(excelFileURL);
+     
+    document.getElementById("updateAboutButton").addEventListener("click", function() {
+      var wordFileURL = "https://docs.google.com/document/d/1YIPN_D5WoiIDftB8L540mFyB6bVUCl0P/edit?pli=1"; // Replace with your actual Word file URL
+      window.open(wordFileURL);
+      document.getElementById("uploadPhotosButton").addEventListener("click", function() {
+    var eventPhotosInput = document.getElementById("eventPhotosInput");
+    var uploadedPhotosContainer = document.getElementById("uploadedPhotosContainer");
+
+    eventPhotosInput.addEventListener("change", function(event) {
+      var files = event.target.files;
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        var photoURL = URL.createObjectURL(file);
+
+        var imgElement = document.createElement("img");
+        imgElement.src = photoURL;
+        imgElement.style.maxWidth = "200px"; // Adjust as needed
+
+        uploadedPhotosContainer.appendChild(imgElement);
+      }
+    });
+
+    eventPhotosInput.click(); // Trigger the file input dialog
+  });
+    });
+    });
+  </script>
+</body>
+</html>
